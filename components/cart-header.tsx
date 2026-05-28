@@ -17,7 +17,6 @@ import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import Image from 'next/image'
 import { CouponInput } from './coupon-input'
-import { AuthButton } from './auth-button'
 
 export function CartHeader() {
   const { items, removeItem, updateQuantity, clearCart, total } = useCart()
@@ -38,19 +37,16 @@ export function CartHeader() {
 
   return (
     <div className="flex items-center gap-2">
-      <AuthButton />
-      
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
           <Button
-            variant="outline"
-            size="lg"
-            className="relative gap-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
+            variant="ghost"
+            size="icon"
+            className="relative"
           >
             <ShoppingCart size={20} />
-            <span className="font-semibold hidden sm:inline">Giỏ hàng</span>
             {items.length > 0 && (
-              <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 bg-accent text-accent-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
                 {items.length}
               </span>
             )}

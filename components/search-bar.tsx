@@ -55,7 +55,7 @@ export function SearchBar({ onSearch, placeholder = 'Tìm kiếm sản phẩm, d
     <div className="relative flex-1 max-w-2xl">
       <div className="flex gap-2">
         <div className="relative flex-1">
-          <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
+          <Search size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
           <Input
             type="text"
             placeholder={placeholder}
@@ -66,23 +66,24 @@ export function SearchBar({ onSearch, placeholder = 'Tìm kiếm sản phẩm, d
             }}
             onFocus={() => setShowSuggestions(true)}
             onKeyDown={handleKeyDown}
-            className="pl-12 pr-12 h-12 text-base border-2 border-border focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-lg shadow-sm"
+            className="pl-10 pr-10 h-10 text-sm border border-border focus:border-primary focus:ring-1 focus:ring-primary/20 rounded-lg bg-secondary/30"
           />
           {query && (
             <button
               onClick={handleClear}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors bg-background rounded-full p-1"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors bg-background rounded-full p-0.5"
             >
-              <X size={18} />
+              <X size={16} />
             </button>
           )}
         </div>
         <Button
           onClick={handleSearch}
-          className="h-12 px-8 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-base rounded-lg shadow-md"
+          size="default"
+          className="h-10 px-5 bg-primary hover:bg-primary/90 text-primary-foreground font-medium text-sm rounded-lg"
         >
-          <Search size={20} className="mr-2" />
-          Tìm kiếm
+          <Search size={16} className="mr-2" />
+          Tim
         </Button>
       </div>
 
