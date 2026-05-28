@@ -49,12 +49,10 @@ export function AccountMenu() {
       <>
         <Button
           onClick={() => setShowAuth(true)}
-          variant="outline"
-          size="lg"
-          className="gap-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
+          variant="ghost"
+          size="icon"
         >
           <User size={20} />
-          <span className="hidden sm:inline">Tài khoản</span>
         </Button>
 
         <Dialog open={showAuth} onOpenChange={setShowAuth}>
@@ -112,12 +110,12 @@ export function AccountMenu() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          variant="outline"
-          size="lg"
-          className="gap-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
+          variant="ghost"
+          size="icon"
+          className="relative"
         >
           <User size={20} />
-          <span className="hidden sm:inline">{user?.name}</span>
+          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-primary rounded-full border-2 border-background" />
         </Button>
       </DropdownMenuTrigger>
 

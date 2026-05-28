@@ -66,14 +66,13 @@ export function WishlistSheet() {
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
         <Button
-          variant="outline"
-          size="lg"
-          className="relative gap-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
+          variant="ghost"
+          size="icon"
+          className="relative"
         >
           <Heart size={20} />
-          <span className="font-semibold hidden sm:inline">Yeu thich</span>
           {wishlistIds.length > 0 && (
-            <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">
+            <span className="absolute -top-1 -right-1 bg-accent text-accent-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
               {wishlistIds.length}
             </span>
           )}
